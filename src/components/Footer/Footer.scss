@@ -1,0 +1,9 @@
+@import '../../styles/general.scss';
+
+.page-footer {
+    background-color: $main-background-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $text-dark-blue;
+}
