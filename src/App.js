@@ -1,36 +1,33 @@
 import './App.scss';
 import Header from "./components/Header/Header"
-import Body from "./components/Body/Body"
 import Fotter from "./components/Footer/Footer"
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: '#4e85c7',
-      main: '#035996',
-      dark: '#003168',
-      contrastText: '#ffffff',
-    },
-    secondary: {
-      light: '#e8f4fd',
-      main: '#E3F2FD',
-      dark: '#9ea9b1',
-      contrastText: '#035996',
-    },
-  },
-});
+import { Route, Switch } from 'react-router-dom';
+import Login from './components/Login/Login';
+import ToDo from './components/Todo/ToDo';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="main-container">
-        <Header />
-        <Body />
-        <Fotter />
+    <div className="main-container">
+      <Header />
+      <div className="page-body">
+        <Switch>
+
+          <Route path="/" exact>
+            <Login />
+          </Route>
+
+          <Route path="/todo" exact>
+            <ToDo />
+          </Route>
+
+          <Route path="/todo/:searchText" exact>
+            <ToDo />
+          </Route>
+          
+        </Switch>
       </div>
-    </ThemeProvider>
+      <Fotter />
+    </div>
   )
 }
 

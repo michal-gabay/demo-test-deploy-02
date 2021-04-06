@@ -1,5 +1,26 @@
 @import '../../styles/general.scss';
 
+
+
+.page-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.paper {
+    margin: 20px;
+    max-width: 33.333333%;
+    width: 390px;
+
+    // &.login-paper {
+    //     padding: 40px;
+    // }
+}
+
+
 .login-form {
     margin: 40px;
     display: flex;
